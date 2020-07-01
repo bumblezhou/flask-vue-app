@@ -29,7 +29,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # a. Open $apache_home/conf/httpd.conf
   b. Be sure the following settings:
-    Define SRVROOT "$your_www_folder"
+    Define SRVROOT "$your_apache_server_root_folder"
     #Define ENABLE_TLS13 "Yes"
     LoadModule proxy_module modules/mod_proxy.so
     LoadModule proxy_http_module modules/mod_proxy_http.so

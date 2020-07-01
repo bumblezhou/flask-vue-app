@@ -1,12 +1,9 @@
 from flask import Flask, jsonify, make_response, render_template
 import uuid
-# from flask_cors import CORS
 
 DEBUG = True
 
 app = Flask(__name__, template_folder='templates', static_folder="static")
-# CORS(app, resources={r'/*': {'origins': '*'}})
-
 
 @app.route('/api/ping', methods=['GET', 'POST'])
 def ping_pong():
