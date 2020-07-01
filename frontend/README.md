@@ -24,20 +24,21 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Debug with VUE:
-# download apache httpd server from the following site:
-# https://www.apachehaus.com/cgi-bin/download.plx
+### download apache httpd server from the following site:
+### https://www.apachehaus.com/cgi-bin/download.plx
 
-# a. Open $apache_home/conf/httpd.conf
-  b. Be sure the following settings:
+### a. Open $apache_home/conf/httpd.conf
+### b. Be sure the following settings:
     Define SRVROOT "$your_apache_server_root_folder"
     #Define ENABLE_TLS13 "Yes"
     LoadModule proxy_module modules/mod_proxy.so
     LoadModule proxy_http_module modules/mod_proxy_http.so
     LoadModule headers_module modules/mod_headers.so
-  c. Setting DocumentRoot:
+### c. Setting DocumentRoot:
   DocumentRoot "$your_vue_project_root_folder"
   <Directory "$your_vue_project_root_folder">
-  d. Setting Apache proxy rules:
+
+### d. Setting Apache proxy rules:
     Header always append X-Frame-Options SAMEORIGIN
     Header always append X-Content-Type-Options nosniff
     Header always append X-XSS-Protection "1;mode=block"
@@ -52,6 +53,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
             ProxyPass /static http://localhost:8080/static
             ProxyPass / http://localhost:8080/
     </VirtualHost>
-  e. open httpd server and listening at 80 port
-  f. in Vue project folder, run 'npm run serve' and debug at 8080 port
-  g. open broswer and open url: http://localhost/ to preview and debug the vue page
+### e. open httpd server and listening at 80 port
+### f. in Vue project folder, run 'npm run serve' and debug at 8080 port
+### g. open broswer and open url: http://localhost/ to preview and debug the vue page
